@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>  Html CRUD with Pure JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <h1 class="">Hello, welcome to the MexDevs user control system.</h1>
+        <h2 class="">Here you can find information about existing users, create new users, edit and delete them.</h2>
+    </section>
+
+    <table>
+        <tr class="row m-auto">
+            <td class="col-3 form">
+                <form  onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    
+                    <div class="row">
+                        <label class="col">First Name</label><label class="col validation-error hide" id="firstNameValidationError">This field is required.</label>
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                    <div class="row">
+                        <label class="col">Last Name</label><label class="col validation-error hide" id="lastNameValidationError">This field is required.</label>
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                    <div class="row">
+                        <label class="col">Address</label><label class="col validation-error hide" id="addressValidationError">This field is required.</label>
+                        <input type="text" name="address" id="address">
+                    </div>
+                    <div class="row">
+                        <label class="col">Country</label><label class="col validation-error hide" id="countryValidationError">This field is required.</label>
+                        <input type="text" name="country" id="country">
+                    </div>
+                    <div class="row">
+                        <label class="col">Email</label><label class="col validation-error hide" id="emailValidationError">This field is required.</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+
+                    <div class="row">
+                        <label class="col">Password</label><label class="col validation-error hide" id="passwordValidationError">This field is required.</label><br>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            
+            <td class="col crud">
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Address</th>
+                            <th>Country</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                            
+                        </tr>
+                       
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+            
+        </tr>
+    </table>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+</body>
+
+</html>
