@@ -29,6 +29,7 @@ function insertNewRecord(data) {
     
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
+
     cell1 = newRow.insertCell(0);
     cell1.innerHTML = i;
     i=i+1;
@@ -62,9 +63,11 @@ function resetForm() {
 
     selectedRow = null;
 }
-
+var edit;
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
+
+    edit = selectedRow.cells[0].innerHTML ;
     document.getElementById("firstName").value = selectedRow.cells[6].innerHTML ;
     document.getElementById("lastName").value = selectedRow.cells[7].innerHTML ;
     document.getElementById("address").value = selectedRow.cells[2].innerHTML;
@@ -73,12 +76,12 @@ function onEdit(td) {
 }
 
 function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.id;
-    selectedRow.cells[1].innerHTML = formData.firstName;
-    selectedRow.cells[2].innerHTML = formData.lastName;
-    selectedRow.cells[3].innerHTML = formData.address;
-    selectedRow.cells[4].innerHTML = formData.country;
-    selectedRow.cells[5].innerHTML = formData.email;
+   
+    selectedRow.cells[0].innerHTML = edit;
+    selectedRow.cells[1].innerHTML = formData.firstName + " " + formData.lastName;
+    selectedRow.cells[2].innerHTML = formData.address;
+    selectedRow.cells[3].innerHTML = formData.country;
+    selectedRow.cells[4].innerHTML = formData.email;
 }
 
 function onDelete(td) {
